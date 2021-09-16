@@ -1,2 +1,2 @@
 # TikTok
-maek TikTok without Storyboard, xib
+make TikTok without Storyboard, xib
