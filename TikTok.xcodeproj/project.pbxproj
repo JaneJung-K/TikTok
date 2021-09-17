@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		27EC5BA74D3696E681ECAEF4 /* Pods_TikTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5D79D988FEC982AE99E2DA9 /* Pods_TikTok.framework */; };
+		A34D881126F41D7C00622CCA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D881026F41D7C00622CCA /* Extensions.swift */; };
+		A34D881326F425CD00622CCA /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D881226F425CD00622CCA /* PostModel.swift */; };
 		A3C257F426F2D0E4002B371F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C257F326F2D0E4002B371F /* AppDelegate.swift */; };
 		A3C257F626F2D0E4002B371F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C257F526F2D0E4002B371F /* SceneDelegate.swift */; };
 		A3C257F826F2D0E4002B371F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C257F726F2D0E4002B371F /* HomeViewController.swift */; };
@@ -32,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		4E0460C9391A095A57B0A540 /* Pods-TikTok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTok.debug.xcconfig"; path = "Target Support Files/Pods-TikTok/Pods-TikTok.debug.xcconfig"; sourceTree = "<group>"; };
+		A34D881026F41D7C00622CCA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A34D881226F425CD00622CCA /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		A3C257F026F2D0E4002B371F /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C257F326F2D0E4002B371F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3C257F526F2D0E4002B371F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				A3C2583026F31918002B371F /* GoogleService-Info.plist */,
 				A3C257F326F2D0E4002B371F /* AppDelegate.swift */,
 				A3C257F526F2D0E4002B371F /* SceneDelegate.swift */,
+				A34D881026F41D7C00622CCA /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 		A3C2580A26F2D99B002B371F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A34D881226F425CD00622CCA /* PostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -346,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C2582F26F2E044002B371F /* HapticsManager.swift in Sources */,
+				A34D881126F41D7C00622CCA /* Extensions.swift in Sources */,
 				A3C2582B26F2E023002B371F /* DatabaseManager.swift in Sources */,
 				A3C2581D26F2DB05002B371F /* SignUPViewController.swift in Sources */,
 				A3C2581126F2DA86002B371F /* ExploreViewController.swift in Sources */,
@@ -358,6 +365,7 @@
 				A3C2581526F2DAB2002B371F /* NotificationsViewController.swift in Sources */,
 				A3C257F826F2D0E4002B371F /* HomeViewController.swift in Sources */,
 				A3C2581726F2DADE002B371F /* ProfileViewController.swift in Sources */,
+				A34D881326F425CD00622CCA /* PostModel.swift in Sources */,
 				A3C257F426F2D0E4002B371F /* AppDelegate.swift in Sources */,
 				A3C2582926F2E010002B371F /* StorageManager.swift in Sources */,
 				A3C257F626F2D0E4002B371F /* SceneDelegate.swift in Sources */,
