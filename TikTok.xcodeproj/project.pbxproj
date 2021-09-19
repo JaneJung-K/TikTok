@@ -14,6 +14,7 @@
 		A34D881726F6EDB800622CCA /* PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D881626F6EDB800622CCA /* PostComment.swift */; };
 		A34D881926F6EE7500622CCA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D881826F6EE7500622CCA /* User.swift */; };
 		A34D881B26F7507E00622CCA /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D881A26F7507E00622CCA /* CommentTableViewCell.swift */; };
+		A34D881D26F75DDE00622CCA /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A34D881C26F75DDE00622CCA /* video.mp4 */; };
 		A3C257F426F2D0E4002B371F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C257F326F2D0E4002B371F /* AppDelegate.swift */; };
 		A3C257F626F2D0E4002B371F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C257F526F2D0E4002B371F /* SceneDelegate.swift */; };
 		A3C257F826F2D0E4002B371F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C257F726F2D0E4002B371F /* HomeViewController.swift */; };
@@ -44,6 +45,7 @@
 		A34D881626F6EDB800622CCA /* PostComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComment.swift; sourceTree = "<group>"; };
 		A34D881826F6EE7500622CCA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A34D881A26F7507E00622CCA /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		A34D881C26F75DDE00622CCA /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		A3C257F026F2D0E4002B371F /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C257F326F2D0E4002B371F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3C257F526F2D0E4002B371F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				A3C257FC26F2D0E5002B371F /* Assets.xcassets */,
+				A34D881C26F75DDE00622CCA /* video.mp4 */,
 				A3C2583026F31918002B371F /* GoogleService-Info.plist */,
 				A3C257F326F2D0E4002B371F /* AppDelegate.swift */,
 				A3C257F526F2D0E4002B371F /* SceneDelegate.swift */,
@@ -294,6 +297,7 @@
 				A3C2580026F2D0E5002B371F /* LaunchScreen.storyboard in Resources */,
 				A3C257FD26F2D0E5002B371F /* Assets.xcassets in Resources */,
 				A3C2583126F31918002B371F /* GoogleService-Info.plist in Resources */,
+				A34D881D26F75DDE00622CCA /* video.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

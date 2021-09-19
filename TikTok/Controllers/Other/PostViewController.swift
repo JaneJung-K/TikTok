@@ -4,11 +4,12 @@
 //
 //  Created by 정혜영 on 2021/09/16.
 //
-
+import AVFoundation
 import UIKit
 
 protocol PostViewControllerDelegate: AnyObject {
     func postViewController(_ vc: PostViewController, didTapCommentButtonFor post: PostModel)
+    func postViewController(_ vc: PostViewController, didTapProfileButtonFor post: PostModel)
 }
 
 class PostViewController: UIViewController {
@@ -41,6 +42,15 @@ class PostViewController: UIViewController {
         return button
     }()
     
+    private let profileButton: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIImage(named: "test"), for: .normal)
+        button.tintColor = .white
+        button.layer.masksToBounds = true
+        button.imageView?.contentMode = .scaleAspectFill
+        return button
+    }()
+    
     private let captionLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
@@ -50,6 +60,8 @@ class PostViewController: UIViewController {
         label.textColor = .white
         return label
     }()
+    
+    var player: AVPlayer?
     
     // MARK: - Init
     
@@ -65,7 +77,7 @@ class PostViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configureVideo()
         let colors: [UIColor] = [
             .red, .green, .black, .orange, .black, .white, .systemPink
         ]
@@ -74,14 +86,17 @@ class PostViewController: UIViewController {
         setUpButtons()
         setUpDoubleTapToLike()
         view.addSubview(captionLabel)
+        view.addSubview(profileButton)
+        profileButton.addTarget(self, action: #selector(didTapProfileButton), for: .touchUpInside)
+        
     }
-
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         let size: CGFloat = 40
-        let yStart: CGFloat = view.height - (size * 4) - 30 - view.safeAreaInsets.bottom - (tabBarController?.tabBar.height ?? 0)
+        let tabBarHeight: CGFloat = (tabBarController?.tabBar.height ?? 0)
+        let yStart: CGFloat = view.height - (size * 4) - 30 - view.safeAreaInsets.bottom - tabBarHeight
         for (index, button ) in [likeButton, commentButton, shareButton].enumerated() {
             button.frame = CGRect(x: view.width-size-10, y: yStart + (CGFloat(index) * 10) + (CGFloat(index) * size), width: size, height: size)
         }
@@ -92,7 +107,35 @@ class PostViewController: UIViewController {
             x: 5,
             y: view.height - 10 - view.safeAreaInsets.bottom - labelSize.height - (tabBarController?.tabBar.height ?? 0),
             width: view.width - size - 12,
-            height: labelSize.height)
+            height: labelSize.height
+        )
+        
+        profileButton.frame = CGRect(
+            x: likeButton.left,
+            y: likeButton.top - 10 - size,
+            width: size,
+            height: size
+        )
+        profileButton.layer.cornerRadius = size / 2
+    }
+    
+    private func configureVideo() {
+        guard let path = Bundle.main.path(forResource: "video", ofType: "mp4") else {
+            return
+        }
+        let url = URL(fileURLWithPath: path)
+        player = AVPlayer(url: url)
+        
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = view.bounds
+        playerLayer.videoGravity = .resizeAspectFill
+        view.layer.addSublayer(playerLayer)
+        player?.volume = 0
+        player?.play()
+    }
+    
+    @objc func didTapProfileButton() {
+        delegate?.postViewController(self, didTapProfileButtonFor: model)
     }
     
     func setUpButtons() {
