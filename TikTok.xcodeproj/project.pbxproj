@@ -10,6 +10,9 @@
 		27EC5BA74D3696E681ECAEF4 /* Pods_TikTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5D79D988FEC982AE99E2DA9 /* Pods_TikTok.framework */; };
 		A34D881126F41D7C00622CCA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D881026F41D7C00622CCA /* Extensions.swift */; };
 		A34D881326F425CD00622CCA /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D881226F425CD00622CCA /* PostModel.swift */; };
+		A34D881526F47BD900622CCA /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D881426F47BD900622CCA /* CommentsViewController.swift */; };
+		A34D881726F6EDB800622CCA /* PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D881626F6EDB800622CCA /* PostComment.swift */; };
+		A34D881926F6EE7500622CCA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D881826F6EE7500622CCA /* User.swift */; };
 		A3C257F426F2D0E4002B371F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C257F326F2D0E4002B371F /* AppDelegate.swift */; };
 		A3C257F626F2D0E4002B371F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C257F526F2D0E4002B371F /* SceneDelegate.swift */; };
 		A3C257F826F2D0E4002B371F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C257F726F2D0E4002B371F /* HomeViewController.swift */; };
@@ -36,6 +39,9 @@
 		4E0460C9391A095A57B0A540 /* Pods-TikTok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTok.debug.xcconfig"; path = "Target Support Files/Pods-TikTok/Pods-TikTok.debug.xcconfig"; sourceTree = "<group>"; };
 		A34D881026F41D7C00622CCA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A34D881226F425CD00622CCA /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		A34D881426F47BD900622CCA /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
+		A34D881626F6EDB800622CCA /* PostComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComment.swift; sourceTree = "<group>"; };
+		A34D881826F6EE7500622CCA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A3C257F026F2D0E4002B371F /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C257F326F2D0E4002B371F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3C257F526F2D0E4002B371F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				A34D881226F425CD00622CCA /* PostModel.swift */,
+				A34D881626F6EDB800622CCA /* PostComment.swift */,
+				A34D881826F6EE7500622CCA /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +199,7 @@
 				A3C2581C26F2DB05002B371F /* SignUPViewController.swift */,
 				A3C2581E26F2DB0F002B371F /* SettingsViewController.swift */,
 				A3C2582426F2DBB0002B371F /* PostViewController.swift */,
+				A34D881426F47BD900622CCA /* CommentsViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -351,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A34D881526F47BD900622CCA /* CommentsViewController.swift in Sources */,
 				A3C2582F26F2E044002B371F /* HapticsManager.swift in Sources */,
 				A34D881126F41D7C00622CCA /* Extensions.swift in Sources */,
 				A3C2582B26F2E023002B371F /* DatabaseManager.swift in Sources */,
@@ -360,10 +370,12 @@
 				A3C2582526F2DBB0002B371F /* PostViewController.swift in Sources */,
 				A3C2581926F2DAF1002B371F /* UserListViewController.swift in Sources */,
 				A3C2582126F2DB3F002B371F /* TabBarViewController.swift in Sources */,
+				A34D881926F6EE7500622CCA /* User.swift in Sources */,
 				A3C2582D26F2E036002B371F /* Authentication.swift in Sources */,
 				A3C2581326F2DA9A002B371F /* CameraViewController.swift in Sources */,
 				A3C2581526F2DAB2002B371F /* NotificationsViewController.swift in Sources */,
 				A3C257F826F2D0E4002B371F /* HomeViewController.swift in Sources */,
+				A34D881726F6EDB800622CCA /* PostComment.swift in Sources */,
 				A3C2581726F2DADE002B371F /* ProfileViewController.swift in Sources */,
 				A34D881326F425CD00622CCA /* PostModel.swift in Sources */,
 				A3C257F426F2D0E4002B371F /* AppDelegate.swift in Sources */,
