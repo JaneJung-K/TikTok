@@ -23,6 +23,7 @@ class ExploreViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ExploreManager.shared.delegate = self
         view.backgroundColor = .systemBackground
         configureModels()
         setUpSearchBar()
@@ -75,7 +76,7 @@ class ExploreViewController: UIViewController {
             ExploreSection(
                 type: .tredingHashtags,
                 cells: ExploreManager.shared.getExploreHashtags().compactMap({
-                     ExploreCell.hashtag(viewModel: $0)
+                     return ExploreCell.hashtag(viewModel: $0)
                 })
             )
         )
@@ -209,19 +210,31 @@ extension ExploreViewController: UICollectionViewDataSource, UICollectionViewDel
         
         switch model {
         case .banner(let viewModel):
-            break
+            viewModel.handler()
         case .post(let viewModel):
-            break
+            viewModel.handler()
         case .hashtag(let viewModel):
-            break
+            viewModel.handler()
         case .user(let viewModel):
-            break
+            viewModel.handler()
         }
     }
 }
 
 extension ExploreViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(didTapCancel))
+    }
     
+    @objc func didTapCancel() {
+        navigationItem.rightBarButtonItem = nil
+        searchBar.text = nil
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 }
 
 //MARK: - Section Layouts
@@ -372,5 +385,16 @@ extension ExploreViewController {
             return sectionLayout
         }
      
+    }
+}
+
+extension ExploreViewController: ExploreManagerDelegate {
+    func pushViewController(_ vc: UIViewController) {
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func didTapHashtag(_ hashtag: String) {
+        searchBar.text = hashtag
+        searchBar.becomeFirstResponder()
     }
 }
