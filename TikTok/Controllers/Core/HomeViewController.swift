@@ -51,6 +51,7 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .systemBackground
         view.addSubview(horizontalScrollView)
         setUpFeed()
+        horizontalScrollView.contentInsetAdjustmentBehavior = .never
         horizontalScrollView.delegate = self
         // 우스크롤해야 다른 뷰가 나왔는데 왼쪽으로 하면 나온다!
        horizontalScrollView.contentOffset = CGPoint(x: view.width, y: 0)
