@@ -256,6 +256,7 @@
 				A3C2581E26F2DB0F002B371F /* SettingsViewController.swift */,
 				A3C2582426F2DBB0002B371F /* PostViewController.swift */,
 				A34D881426F47BD900622CCA /* CommentsViewController.swift */,
+				A391DA4626FABE89004338B0 /* CaptionViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -279,7 +280,6 @@
 				A34D883B26F989EA00622CCA /* AuthField.swift */,
 				A34D883D26F98A0700622CCA /* AuthButton.swift */,
 				A33AC5C826FA46980061C3DB /* RecordButton.swift */,
-				A391DA4626FABE89004338B0 /* CaptionViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
