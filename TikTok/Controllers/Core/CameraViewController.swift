@@ -29,6 +29,12 @@ class CameraViewController: UIViewController {
         return view
     }()
     
+    private let recordButton = RecordButton()
+    
+    private var previewLayer: AVPlayerLayer?
+    
+    var recordedVideoURL: URL?
+    
     // MARK: - Lifecyle
 
     override func viewDidLoad() {
@@ -41,11 +47,15 @@ class CameraViewController: UIViewController {
             target: self,
             action: #selector(didTapClose)
         )
+        view.addSubview(recordButton)
+        recordButton.addTarget(self, action: #selector(didTapRecord), for: .touchUpInside)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         cameraView.frame = view.bounds
+        let size: CGFloat = 70
+        recordButton.frame = CGRect(x: (view.width - size)/2, y: view.height - view.safeAreaInsets.bottom - size - 5, width: size, height: size)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,17 +64,43 @@ class CameraViewController: UIViewController {
         tabBarController?.tabBar.isHidden = true
     }
     
+    @objc private func didTapRecord() {
+        if captureOutput.isRecording {
+            // stop recording
+            recordButton.toggle(for: .notRecording)
+            captureOutput.stopRecording()
+            HapticsManager.shared.vibrateForSelection()
+        } else {
+            guard var url = FileManager.default.urls(
+                for: .documentDirectory,
+                in: .userDomainMask
+            ).first else {
+                return
+            }
+            HapticsManager.shared.vibrateForSelection()
+
+            url.appendPathComponent("video.mov")
+
+            recordButton.toggle(for: .recording)
+
+            try? FileManager.default.removeItem(at: url)
+
+            captureOutput.startRecording(to: url,
+                                         recordingDelegate: self)
+        }
+    }
+    
     @objc private func didTapClose() {
-//        navigationItem.rightBarButtonItem = nil
-//        recordButton.isHidden = false
-//        if previewLayer != nil {
-//            previewLayer?.removeFromSuperlayer()
-//            previewLayer = nil
-//        } else {
+        navigationItem.rightBarButtonItem = nil
+        recordButton.isHidden = false
+        if previewLayer != nil {
+            previewLayer?.removeFromSuperlayer()
+            previewLayer = nil
+        } else {
             captureSession.stopRunning()
             tabBarController?.tabBar.isHidden = false
             tabBarController?.selectedIndex = 0
-        //}
+        }
     }
     
     func setUpCamera() {
@@ -111,9 +147,31 @@ extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
     func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
         
         guard error == nil else {
+            let alert = UIAlertController(title: "Woops",
+                                          message: "Something went wrong when recording your video",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+            present(alert, animated: true)
             return
         }
         
-        print("Finished recording to url: \(outputFileURL.absoluteString)")
+        recordedVideoURL = outputFileURL
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(didTapNext))
+        
+        let player = AVPlayer(url: outputFileURL)
+        previewLayer = AVPlayerLayer(player: player)
+        previewLayer?.videoGravity = .resizeAspectFill
+        previewLayer?.frame = cameraView.bounds
+        guard let previewLayer = previewLayer else {
+            return
+        }
+        recordButton.isHidden = true
+        cameraView.layer.addSublayer(previewLayer)
+        previewLayer.player?.play()
+    }
+    
+    @objc func didTapNext() {
+        // Push caption controller
     }
 }
