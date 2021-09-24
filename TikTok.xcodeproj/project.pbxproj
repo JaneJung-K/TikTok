@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27EC5BA74D3696E681ECAEF4 /* Pods_TikTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5D79D988FEC982AE99E2DA9 /* Pods_TikTok.framework */; };
+		39EF02FB26FDB84100B06DC6 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EF02FA26FDB84100B06DC6 /* Notifications.swift */; };
 		A33AC5C926FA46980061C3DB /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33AC5C826FA46980061C3DB /* RecordButton.swift */; };
 		A34D881126F41D7C00622CCA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D881026F41D7C00622CCA /* Extensions.swift */; };
 		A34D881326F425CD00622CCA /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34D881226F425CD00622CCA /* PostModel.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39EF02FA26FDB84100B06DC6 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		4E0460C9391A095A57B0A540 /* Pods-TikTok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTok.debug.xcconfig"; path = "Target Support Files/Pods-TikTok/Pods-TikTok.debug.xcconfig"; sourceTree = "<group>"; };
 		A33AC5C826FA46980061C3DB /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		A34D881026F41D7C00622CCA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				A34D881E26F76EF300622CCA /* ExploreSection.swift */,
 				A34D882026F76F2800622CCA /* ExploreCell.swift */,
 				A34D882226F76F5500622CCA /* ExploreSectionType.swift */,
+				39EF02FA26FDB84100B06DC6 /* Notifications.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39EF02FB26FDB84100B06DC6 /* Notifications.swift in Sources */,
 				A34D883E26F98A0700622CCA /* AuthButton.swift in Sources */,
 				A34D883C26F989EA00622CCA /* AuthField.swift in Sources */,
 				A34D881526F47BD900622CCA /* CommentsViewController.swift in Sources */,
