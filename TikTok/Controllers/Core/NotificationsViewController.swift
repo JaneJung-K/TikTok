@@ -100,7 +100,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         let model = notifications[indexPath.row]
         
         switch model.type {
-        case .postLike(postName: let postName):
+        case .postLike(let postName):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: NotificationsPostLikeTableViewCell.identifier, for: indexPath
             ) as? NotificationsPostLikeTableViewCell else {
                 return tableView.dequeueReusableCell(
@@ -108,9 +108,9 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
                     for: indexPath
                 )
             }
-            cell.configure(with: postName)
+            cell.configure(with: postName, model: model)
             return cell
-        case .userFollow(username: let username):
+        case .userFollow(let username):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: NotificationsUserFollowTableViewCell.identifier, for: indexPath
             ) as? NotificationsUserFollowTableViewCell else {
                 return tableView.dequeueReusableCell(
@@ -118,9 +118,9 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
                     for: indexPath
                 )
             }
-            cell.configure(with: username)
+            cell.configure(with: username, model: model)
             return cell
-        case .postComment(postName: let postName):
+        case .postComment(let postName):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: NotificationsPostCommentTableViewCell.identifier, for: indexPath
             ) as? NotificationsPostCommentTableViewCell else {
                 return tableView.dequeueReusableCell(
@@ -128,10 +128,14 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
                     for: indexPath
                 )
             }
-            cell.configure(with: postName)
+            cell.configure(with: postName, model: model)
             return cell
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 
 }
