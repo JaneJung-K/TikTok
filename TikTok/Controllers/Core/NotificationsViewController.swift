@@ -49,8 +49,25 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         view.addSubview(spinner)
         tableView.delegate = self
         tableView.dataSource = self
-        
+        let control = UIRefreshControl()
+        control.addTarget(self, action: #selector(didPullToRefresh(_:)), for: .valueChanged)
+        tableView.refreshControl = control
         fetchNotifications()
+    }
+    
+    @objc func didPullToRefresh(_ sender: UIRefreshControl) {
+        sender.beginRefreshing()
+        
+        DatabaseManager.shared.getNotifications { [weak self] notifications in
+            DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+                self?.notifications = notifications
+                self?.tableView.reloadData()
+                sender.endRefreshing()
+            }
+            
+        }
+        
+        sender.endRefreshing()
     }
     
     override func viewDidLayoutSubviews() {
