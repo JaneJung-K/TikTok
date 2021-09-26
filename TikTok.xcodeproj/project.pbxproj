@@ -10,6 +10,8 @@
 		27EC5BA74D3696E681ECAEF4 /* Pods_TikTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5D79D988FEC982AE99E2DA9 /* Pods_TikTok.framework */; };
 		3935B02A26FF307E000014DA /* NotificationsPostLikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3935B02926FF307E000014DA /* NotificationsPostLikeTableViewCell.swift */; };
 		3935B02C26FF30A3000014DA /* NotificationsPostCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3935B02B26FF30A3000014DA /* NotificationsPostCommentTableViewCell.swift */; };
+		3945F4F22700102A004B8A1D /* ProfileHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3945F4F12700102A004B8A1D /* ProfileHeaderCollectionReusableView.swift */; };
+		395AF79627003DC100823176 /* ProfilleHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395AF79527003DC100823176 /* ProfilleHeaderViewModel.swift */; };
 		39EF02FB26FDB84100B06DC6 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EF02FA26FDB84100B06DC6 /* Notifications.swift */; };
 		39EF02FD26FF2E9D00B06DC6 /* NotificationsUserFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EF02FC26FF2E9D00B06DC6 /* NotificationsUserFollowTableViewCell.swift */; };
 		A33AC5C926FA46980061C3DB /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33AC5C826FA46980061C3DB /* RecordButton.swift */; };
@@ -61,6 +63,8 @@
 /* Begin PBXFileReference section */
 		3935B02926FF307E000014DA /* NotificationsPostLikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPostLikeTableViewCell.swift; sourceTree = "<group>"; };
 		3935B02B26FF30A3000014DA /* NotificationsPostCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPostCommentTableViewCell.swift; sourceTree = "<group>"; };
+		3945F4F12700102A004B8A1D /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		395AF79527003DC100823176 /* ProfilleHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilleHeaderViewModel.swift; sourceTree = "<group>"; };
 		39EF02FA26FDB84100B06DC6 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		39EF02FC26FF2E9D00B06DC6 /* NotificationsUserFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsUserFollowTableViewCell.swift; sourceTree = "<group>"; };
 		4E0460C9391A095A57B0A540 /* Pods-TikTok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTok.debug.xcconfig"; path = "Target Support Files/Pods-TikTok/Pods-TikTok.debug.xcconfig"; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 				A34D882626F7711100622CCA /* ExplorePostViewModel.swift */,
 				A34D882826F7712D00622CCA /* ExploreHashtagViewModel.swift */,
 				A34D882A26F7714500622CCA /* ExploreUserViewModel.swift */,
+				395AF79527003DC100823176 /* ProfilleHeaderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 				3935B02726FF3041000014DA /* Auth */,
 				A33AC5C826FA46980061C3DB /* RecordButton.swift */,
 				3935B02D26FF30C0000014DA /* Notifications */,
+				3945F4F12700102A004B8A1D /* ProfileHeaderCollectionReusableView.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -489,8 +495,10 @@
 				A34D882526F770DC00622CCA /* ExploreBannerViewModel.swift in Sources */,
 				A34D882B26F7714500622CCA /* ExploreUserViewModel.swift in Sources */,
 				A3C2582126F2DB3F002B371F /* TabBarViewController.swift in Sources */,
+				395AF79627003DC100823176 /* ProfilleHeaderViewModel.swift in Sources */,
 				A34D881926F6EE7500622CCA /* User.swift in Sources */,
 				A3C2582D26F2E036002B371F /* AuthenticationManager.swift in Sources */,
+				3945F4F22700102A004B8A1D /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				A34D883726F868F900622CCA /* ExploreUserCollectionViewCell.swift in Sources */,
 				3935B02C26FF30A3000014DA /* NotificationsPostCommentTableViewCell.swift in Sources */,
 				A3C2581326F2DA9A002B371F /* CameraViewController.swift in Sources */,
