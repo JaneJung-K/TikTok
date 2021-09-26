@@ -125,6 +125,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
                     for: indexPath
                 )
             }
+            cell.delegate = self
             cell.configure(with: postName, model: model)
             return cell
         case .userFollow(let username):
@@ -135,6 +136,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
                     for: indexPath
                 )
             }
+            cell.delegate = self
             cell.configure(with: username, model: model)
             return cell
         case .postComment(let postName):
@@ -145,6 +147,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
                     for: indexPath
                 )
             }
+            cell.delegate = self
             cell.configure(with: postName, model: model)
             return cell
         }
@@ -180,4 +183,43 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         return 80
     }
 
+}
+
+extension NotificationsViewController: NotificationsUserFollowTableViewCellDelegate {
+    func notificationsUserFollowTableViewCell(_ cell: NotificationsUserFollowTableViewCell, didTapFollowFor username: String) {
+        DatabaseManager.shared.follow(username: username) { success in
+            if !success {
+                print("something failed")
+            }
+        }
+    }
+    
+    func notificationsUserFollowTableViewCell(_ cell: NotificationsUserFollowTableViewCell, didTapAvatorFor username: String) {
+        let vc = ProfileViewController(
+            user: User(username: username,
+                       profilePictureURL: nil,
+                       identifier: "123"))
+        vc.title = username.uppercased()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension NotificationsViewController: NotificationsPostLikeTableViewCellDelegate {
+    func notificationsPostLikeTableViewCell(_ cell: NotificationsPostLikeTableViewCell, didTapPostWith identifier: String) {
+        openPost(with: identifier)
+    }
+}
+
+extension NotificationsViewController: NotificationsPostCommentTableViewCellDelegate {
+    func notificationsPostCommentTableViewCell(_ cell: NotificationsPostCommentTableViewCell, didTapPostWith identifier: String) {
+        openPost(with: identifier)
+    }
+}
+
+extension NotificationsViewController {
+    func openPost(with identifier: String) {
+        let vc = PostViewController(model: PostModel(identifier: identifier))
+        vc.title = "Video"
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
