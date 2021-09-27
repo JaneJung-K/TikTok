@@ -34,8 +34,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: ProfileHeaderCollectionReusableView.identifier
         )
-        collection.register(UICollectionViewCell.self,
-                            forCellWithReuseIdentifier: "cell")
+        collection.register(PostCollectionViewCell.self,
+                            forCellWithReuseIdentifier: PostCollectionViewCell.identifier)
         return collection
     }()
     
@@ -100,14 +100,24 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let postModel = posts[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .systemBlue
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: PostCollectionViewCell.identifier,
+            for: indexPath
+        ) as? PostCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.configure(with: postModel)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         // Open post
+        let post = posts[indexPath.row]
+        let vc = PostViewController(model: post)
+        vc.delegate = self
+        vc.title = "Video"
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -238,4 +248,16 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             }
         }
     }
+}
+
+extension ProfileViewController: PostViewControllerDelegate {
+    func postViewController(_ vc: PostViewController, didTapCommentButtonFor post: PostModel) {
+        // Present comments
+    }
+    
+    func postViewController(_ vc: PostViewController, didTapProfileButtonFor post: PostModel) {
+        // Push another profile
+    }
+    
+    
 }
