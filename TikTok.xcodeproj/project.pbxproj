@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		27EC5BA74D3696E681ECAEF4 /* Pods_TikTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5D79D988FEC982AE99E2DA9 /* Pods_TikTok.framework */; };
 		392CDECA2701BAD000A8536C /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392CDEC92701BAD000A8536C /* PostCollectionViewCell.swift */; };
+		392CDECC2702A95C00A8536C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392CDECB2702A95C00A8536C /* EditProfileViewController.swift */; };
 		3935B02A26FF307E000014DA /* NotificationsPostLikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3935B02926FF307E000014DA /* NotificationsPostLikeTableViewCell.swift */; };
 		3935B02C26FF30A3000014DA /* NotificationsPostCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3935B02B26FF30A3000014DA /* NotificationsPostCommentTableViewCell.swift */; };
 		3945F4F22700102A004B8A1D /* ProfileHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3945F4F12700102A004B8A1D /* ProfileHeaderCollectionReusableView.swift */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		392CDEC92701BAD000A8536C /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		392CDECB2702A95C00A8536C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		3935B02926FF307E000014DA /* NotificationsPostLikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPostLikeTableViewCell.swift; sourceTree = "<group>"; };
 		3935B02B26FF30A3000014DA /* NotificationsPostCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPostCommentTableViewCell.swift; sourceTree = "<group>"; };
 		3945F4F12700102A004B8A1D /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				A3C2582426F2DBB0002B371F /* PostViewController.swift */,
 				A34D881426F47BD900622CCA /* CommentsViewController.swift */,
 				A391DA4626FABE89004338B0 /* CaptionViewController.swift */,
+				392CDECB2702A95C00A8536C /* EditProfileViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 			files = (
 				392CDECA2701BAD000A8536C /* PostCollectionViewCell.swift in Sources */,
 				39EF02FB26FDB84100B06DC6 /* Notifications.swift in Sources */,
+				392CDECC2702A95C00A8536C /* EditProfileViewController.swift in Sources */,
 				A34D883E26F98A0700622CCA /* AuthButton.swift in Sources */,
 				A34D883C26F989EA00622CCA /* AuthField.swift in Sources */,
 				3935B02A26FF307E000014DA /* NotificationsPostLikeTableViewCell.swift in Sources */,

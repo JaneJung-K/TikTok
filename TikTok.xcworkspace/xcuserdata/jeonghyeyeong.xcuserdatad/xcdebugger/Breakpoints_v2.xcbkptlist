@@ -30,8 +30,8 @@
             filePath = "TikTok/Controllers/Core/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
             landmarkName = "profileHeaderCollectionReusableView(_:didTapAvatarWith:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "TikTok/Controllers/Core/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
             landmarkName = "profileHeaderCollectionReusableView(_:didTapAvatarWith:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "TikTok/Controllers/Core/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
             landmarkName = "profileHeaderCollectionReusableView(_:didTapAvatarWith:)"
             landmarkType = "7">
          </BreakpointContent>
