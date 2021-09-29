@@ -61,6 +61,8 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Please allow access to record videos.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please allow access to save the video to your device.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Please allow access to select profile picture from library.</string>
 </dict>
 </plist>
