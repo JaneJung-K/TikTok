@@ -208,17 +208,20 @@ extension HomeViewController: PostViewControllerDelegate {
         else {
             forYouPageViewController.dataSource = nil
         }
-            let vc = CommentsViewController(post: post)
-            vc.delegate = self
-            addChild(vc)
-            vc.didMove(toParent: self)
-            view.addSubview(vc.view)
-            let frame: CGRect = CGRect(x: 0, y: view.height, width: view.width, height: view.height * 0.76)
-            vc.view.frame = frame
-            UIView.animate(withDuration: 0.2) {
-                vc.view.frame = CGRect(x: 0, y: self.view.height - frame.height, width: frame.width, height: frame.height)
-            }
+        
+        HapticsManager.shared.vibrateForSelection()
+        
+        let vc = CommentsViewController(post: post)
+        vc.delegate = self
+        addChild(vc)
+        vc.didMove(toParent: self)
+        view.addSubview(vc.view)
+        let frame: CGRect = CGRect(x: 0, y: view.height, width: view.width, height: view.height * 0.76)
+        vc.view.frame = frame
+        UIView.animate(withDuration: 0.2) {
+            vc.view.frame = CGRect(x: 0, y: self.view.height - frame.height, width: frame.width, height: frame.height)
         }
+    }
     
     func postViewController(_ vc: PostViewController, didTapProfileButtonFor post: PostModel) {
         let user = post.user
